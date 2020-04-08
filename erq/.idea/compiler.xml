@@ -7,9 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="erq-dao" />
-        <module name="erqservice" />
-        <module name="erq-service-impl" />
         <module name="erq-web" />
+        <module name="erq-service" />
+        <module name="erq-service-impl" />
+        <module name="erqservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
