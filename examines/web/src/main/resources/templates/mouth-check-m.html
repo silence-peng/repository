@@ -15,7 +15,7 @@
             <div class="layui-inline">
                 <label class="layui-form-label">编号</label>
                 <div class="layui-input-inline" style="width: 300px;">
-                    <input type="hidden" name="gender" value="0">
+                    <input type="hidden" name="gender" value="1">
                     <input type="text" name="price_min"  autocomplete="off" class="layui-input">
                 </div>
                 <label class="layui-form-label">姓名</label>
@@ -28,27 +28,26 @@
             <legend>X射线检查</legend>
         </fieldset>
         <div class="layui-form-item">
-            <label class="layui-form-label">X射线号</label>
+            <label class="layui-form-label">检查设备</label>
             <div class="layui-input-block">
                 <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入X射线号" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item layui-form-text">
-            <label class="layui-form-label">X射线所见</label>
+            <label class="layui-form-label">检查所见</label>
             <div class="layui-input-block">
                 <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
             </div>
         </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <input type="radio" name="sex" value="男" title="心肺隔离未见异常或改变" checked="">
-                <input type="radio" name="sex" value="女" title="检查禁忌和其他原因未查">
-                <input type="radio" name="sex" value="禁" title="存在异常情况，具体原因如下">
+                <input type="radio" name="sex" value="男" title="检查正常未发现异常情况" checked="">
+                <input type="radio" name="sex" value="禁" title="存在异常情况，描述如下">
             </div>
         </div>
         <div class="layui-form-item layui-form-text">
             <div class="layui-input-block">
-                <textarea placeholder="请输入内容" :disabled="disabled" class="layui-textarea"></textarea>
+                <textarea placeholder="请输入内容" :disable="disable" class="layui-textarea"></textarea>
             </div>
         </div>
         <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
@@ -62,7 +61,7 @@
                     <div class="layui-inline">
                         <label class="layui-form-label">医师签名</label>
                         <div class="layui-input-inline" style="width: 30%">
-                            <select name="city"  lay-verify="required">
+                            <select name="city" lay-verify="required">
                                 <option value=""></option>
                                 <option value="0">北京</option>
                                 <option value="1">上海</option>
@@ -133,6 +132,7 @@
             });
             layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
         });
+
         //监听提交
         form.on('submit(demo1)', function(data){
             layer.alert(JSON.stringify(data.field), {
