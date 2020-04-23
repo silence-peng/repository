@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>婚前孕检系统</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="js/vue.js"></script>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin" id="app">
+    <div class="layui-header">
+        <div class="layui-logo">孕前优生检查系统</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left"  >
+            <li class="layui-nav-item" @click.prevent="changeCpn('info')"><a href="">孕前优生档案信息</a></li>
+            <li class="layui-nav-item" @click.prevent="changeCpn('message')"><a href="">短信随访</a></li>
+            <li class="layui-nav-item" @click.prevent="changeCpn('icon')"><a href="">影像系统</a></li>
+            <li class="layui-nav-item" @click.prevent="changeCpn('check')"><a href="">婚检系统</a></li>
+
+            <li class="layui-nav-item" >
+                <a href="">系统相关</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">邮件管理</a></dd>
+                    <dd><a href="">消息管理</a></dd>
+                    <dd><a href="">授权管理</a></dd>
+                </dl>
+            </li>
+
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:void(0)">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    贤心
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">基本资料</a></dd>
+                    <dd><a href="">安全设置</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="">退了</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black" id="right">
+        <component :is="change"></component>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <iframe id="iframeMain" src="" style="width: 100%" height="100%"></iframe>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        © layui.com - 底部固定区域
+    </div>
+</div>
+<template id="info">
+    <div class="layui-side-scroll">
+        <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <li class="layui-nav-item layui-nav-itemed">
+                <a class="" href="javascript:void(0)">信息查询</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:void(0)">基础信息查询</a></dd>
+                    <dd><a href="javascript:void(0)">未填信息查询</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:void(0)">基础档案信息</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:void(0)">列表一</a></dd>
+                    <dd><a href="javascript:void(0)">列表二</a></dd>
+                    <dd><a href="">超链接</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:void(0)">妻子信息</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:void(0)">列表一</a></dd>
+                    <dd><a href="javascript:void(0)">列表二</a></dd>
+                    <dd><a href="">超链接</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:void(0)">丈夫信息</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:void(0)">列表一</a></dd>
+                    <dd><a href="javascript:void(0)">列表二</a></dd>
+                    <dd><a href="">超链接</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:void(0)">评估建议及其他</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:void(0)">列表一</a></dd>
+                    <dd><a href="javascript:void(0)">列表二</a></dd>
+                    <dd><a href="">超链接</a></dd>
+                </dl>
+            </li>
+        </ul>
+
+    </div>
+</template>
+<template id="message">
+    <div class="layui-side-scroll">
+        <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <li class="layui-nav-item layui-nav-itemed">
+                <a class="" href="javascript:void(0)">短信收发</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:void(0)">自定义短信随访</a></dd>
+                    <dd><a href="javascript:void(0)">评估建议短信随访</a></dd>
+                </dl>
+            </li>
+        </ul>
+
+    </div>
+</template>
+<template id="icon">
+    <div class="layui-side-scroll">
+        <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <li class="layui-nav-item layui-nav-itemed">
+                <a class="" href="javascript:void(0)">影像工作站</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:void(0)">查询档案信息</a></dd>
+                    <dd><a href="javascript:void(0)">打开超声影像</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+</template>
+<template id="check">
+    <div class="layui-side-scroll">
+        <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+        <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <li class="layui-nav-item layui-nav-itemed">
+                <a class="" href="javascript:void(0)">申报与证明打印</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:void(0)">婚前医学证明(女)</a></dd>
+                    <dd><a href="javascript:void(0)">婚前医学证明(男)</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:void(0)">女性常规检查</a>
+            <dl class="layui-nav-child">
+                <dd><a href="javascript:void(0)">常规扩展项目</a></dd>
+                <dd><a href="javascript:void(0)" @click.stop="changeIframe('X-f')">X射线检查</a></dd>
+                <dd><a href="javascript:void(0)">口腔检查</a></dd>
+                <dd><a href="javascript:void(0)">检查结果</a></dd>
+            </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:void(0)">男性常规检查</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:void(0)">常规扩展项目</a></dd>
+                    <dd><a href="javascript:void(0)" @click.stop="changeIframe('X-m')">X射线检查</a></dd>
+                    <dd><a href="javascript:void(0)">口腔检查</a></dd>
+                    <dd><a href="javascript:void(0)">检查结果</a></dd>
+                </dl>
+            </li>
+
+            <li class="layui-nav-item">
+                <a href="javascript:void(0)">化验项目匹配</a>
+            </li>
+        </ul>
+
+    </div>
+</template>
+<script src="layui/layui.js"></script>
+<script src="layui/jquery-1.12.4.js"></script>
+<script>
+    var app=new Vue({
+        el:"#app",
+        data:{
+            change:"info"
+        },
+        methods:{
+            changeCpn:function(value){
+                this.change=value;
+                eleRender();
+            }
+
+        },
+        components:{
+            "info":{template:"#info"},
+            "check":{template:"#check",methods:{changeIframe:function(value){
+                        $("#iframeMain").attr("src",value);
+                        console.log($("#iframeMain").attr("src"))
+                    }}},
+            "icon":{template:"#icon"},
+            "message":{template:"#message"}
+        }
+    });
+    //JavaScript代码区域
+    var element=null;
+    layui.use('element', function(){
+        element = layui.element;
+
+    });
+    $(function () {
+        $("li>a").click(function (e) {
+            e.preventDefault();
+
+        });
+    });
+
+    function eleRender() {
+        element.render();
+    }
+</script>
+</body>
+</html>

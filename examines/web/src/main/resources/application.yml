@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/book
+    username: root
+    password: 123
+    type: com.alibaba.druid.pool.DruidDataSource
+  jackson:
+    date-format: yyyy-MM-dd
+    time-zone: GMT+8
+mybatis:
+  type-aliases-package: com.csdj.pojo
+  mapper-locations: classpath:mapper/*.xml
+  config-location: classpath:mybatis/mybatis-config.xml
+logging:
+  config: classpath:logback-boot.xml

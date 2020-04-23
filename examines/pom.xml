@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.csdj.examines</groupId>
+    <artifactId>examines</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>common</module>
+        <module>service</module>
+        <module>service-impl</module>
+        <module>web</module>
+    </modules>
+    <properties>
+        <java.version>1.8</java.version>
+        <examines.version>0.0.1-SNAPSHOT</examines.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.csdj.examines</groupId>
+                <artifactId>service</artifactId>
+                <version>${examines.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.csdj.examines</groupId>
+                <artifactId>service-impl</artifactId>
+                <version>${examines.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.csdj.examines</groupId>
+                <artifactId>dao</artifactId>
+                <version>${examines.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.csdj.examines</groupId>
+                <artifactId>common</artifactId>
+                <version>${examines.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
